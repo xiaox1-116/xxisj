@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品1详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 导航栏样式 */
+       .nav {
+            background-color: rgba(1, 2, 23);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+       .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+       .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+       .nav-menu li {
+            margin: 0 15px;
+        }
+
+       .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .nav-menu li a:hover {
+            color: #b8b8b8;
+        }
+
+        /* 作品详情页面样式 */
+       .work-detail {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+       .work-detail-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       .work-detail-image {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+       .work-detail-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+			padding-top: 3pt;
+			padding-bottom: 20pt;
+        }
+
+       .work-detail-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+			padding-bottom: 20pt;
+        }
+		.work-detail-description-1 {
+		     font-size: 18px;
+			 font-weight: bold;
+		     color: #111;
+		     line-height: 1.6;
+		 }
+		
+		 
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">个人作品集</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="works.html">作品</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 作品详情 -->
+    <div class="work-detail">
+        <h2 class="work-detail-title">999皮炎平小红书线下活动</h2>
+        
+        <p class="work-detail-description">2024年，小红书联合999皮炎平在广州举办露营季线下活动，我主要参与了线下活动部分物料的制作与修改，首先与客户和相应的对接人对接需求，然后根据甲方所需的风格进行设计，确保在保证美观的前提下，好玩且有品牌特色。
+        </p>
+		
+		
+		<div class="work-detail-image">
+			<p class="work-detail-description-1">示意</p>
+		            <img src="img/xhs.jpg" alt="作品1大图">				
+			<p class="text-gray-700 underline font-bold"><a href="https://www.xiaohongshu.com/explore/66f13c62000000001902dcac?xsec_token=ABjSZU2CJl73j-EJSkMGG0H7FxraOZRFgXsD9H6gNm5UI=&xsec_source=pc_user">链接直达</a></p>
+			
+
+		        </div>
+    </div>
+</body>
+
+</html>
+    

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 导航栏样式 */
+       .nav {
+            background-color: rgba(1, 2, 23);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+       .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+       .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+       .nav-menu li {
+            margin: 0 15px;
+        }
+
+       .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .nav-menu li a:hover {
+            color: #b8b8b8;
+        }
+
+        /* 轮播图样式 */
+        .slider {
+                   width: 100%;
+                   /* 高度使用视口高度的百分比，根据实际情况调整 */
+                   height: 75vh;
+                   position: relative;
+                   overflow: auto;
+				   
+               }
+       
+              .slider img {
+                   width: 100%;
+                   height: 100%;
+                   object-fit: cover;
+                   position: absolute;
+                   opacity: 0;
+                   transition: opacity 1s ease-in-out;
+               }
+       
+              .slider img.active {
+                   opacity: 1;
+               }
+
+        /* 个人作品介绍样式 */
+       .portfolio {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+       .portfolio-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       .portfolio-description {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+       .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+       .portfolio-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+       .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+       .portfolio-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+       .portfolio-item-content {
+            padding: 20px;
+        }
+
+       .portfolio-item-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+       .portfolio-item-text {
+            font-size: 16px;
+            color: #666;
+        }
+		/* 底部版权说明样式 */
+		.footer {
+		     color: #808080;
+		     text-align: center;
+		     padding: 20px 0;
+		     margin-top: 40px;
+		 }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">个人作品集</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="works.html">作品</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 轮播图 -->
+    <div class="slider">
+        <img src="img/iqoo-kv (1).jpg" alt="作品1" class="active">
+        <img src="img/iqoo-kv (2).jpg" alt="作品2">
+        <img src="img/iqoo-kv (3).jpg" alt="作品3">
+    </div>
+    <!-- 个人作品介绍 -->
+    <div class="portfolio">
+        <h2 class="portfolio-title">个人作品介绍</h2>
+        <p class="portfolio-description">这里展示了我的一些优秀作品，包括视觉设计、AICG设计、3D设计、物料设计等。</p>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <a href="works.html#section1">
+                    <img src="img/iqoo-kv (4).jpg" alt="作品1缩略图">
+                    <div class="portfolio-item-content">
+                        <h3 class="portfolio-item-title">视觉设计</h3>
+                        <p class="portfolio-item-text">这是有关活动主KV等的设计，主要采用了AIGC的风格，注重用户体验和视觉效果。</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="works.html#section2">
+                    <img src="img/005.jpg" alt="作品2缩略图">
+                    <div class="portfolio-item-content">
+                        <h3 class="portfolio-item-title">三维设计</h3>
+                        <p class="portfolio-item-text">这是3D设计作品，主要展示作品构思，草图，建模上材质打灯光渲染以及后期的过程。</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="works.html#section3">
+                    <img src="img/0230.jpg" alt="作品3缩略图">
+                    <div class="portfolio-item-content">
+                        <h3 class="portfolio-item-title">电商设计</h3>
+                        <p class="portfolio-item-text">这是电商设计的展示，运用了PS+C4D快速高效制作高质量电商图。</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slider img');
+        let currentSlide = 0;
+
+        function showSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        setInterval(showSlide, 3000);
+    </script>
+	
+	<!-- 底部版权说明 -->
+	<div class="footer">
+	    <p>&copy; 2025 个人作品集. 保留所有权利.</p>
+	</div>
+</body>
+
+</html>
+    

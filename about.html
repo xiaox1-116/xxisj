@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 导航栏样式 */
+       .nav {
+            background-color: rgba(1, 2, 23);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+       .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+       .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+       .nav-menu li {
+            margin: 0 15px;
+        }
+
+       .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .nav-menu li a:hover {
+            color: #b8b8b8;
+        }
+
+        /* 关于我页面样式 */
+       .about {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+       .about-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+       .about-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+       .about-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+       .about-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 900px;
+        }
+
+       .work-experience {
+            margin-top: 40px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+       .work-experience h3 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+       .work-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+       .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+       .work-card h4 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+       .work-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+		/* PDF 下载链接样式 */
+		       .pdf-download {
+		            margin-top: 40px;
+		            text-align: center;
+		        }
+		
+		       .pdf-download a {
+		            display: inline-block;
+		            background-color: rgba(1, 2, 23, 0.9);
+		            color: white;
+		            padding: 15px 30px;
+		            border-radius: 5px;
+		            text-decoration: none;
+		            font-weight: bold;
+		            transition: background-color 0.3s ease;
+		        }
+		
+		       .pdf-download a:hover {
+		            background-color: rgba(1, 2, 23, 0.7);
+		        }
+
+
+        /* 底部版权说明样式 */
+       .footer {
+            color: #808080;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">个人作品集</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="works.html">作品</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 关于我内容 -->
+    <div class="about">
+        <h2 class="about-title">关于我</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="img/005.png" alt="个人照片" onerror="this.src='https://picsum.photos/200/200?random=10'; this.onerror=null;">
+            </div>
+            <div class="about-text">
+                <p class="about-description">
+在4A广告公司和上市公司累积丰富实战经验，曾服务于iQOO、领潮、康佳、京东、小红书等知名国内品牌，展现出色的项目管理与客户沟通能力。</p><br>
+                <p class="about-description">1、拥有9年行业经验，专精于C4D+Oc/Rs的建模与渲染。<br>
+2、熟练使用AIGC作图，不限于MJ与SD等。<br>
+3、熟练掌握PS，擅长图像修饰与合成。<br>
+4、精通Ai与Cdr等矢量软件，进行包装与物料设计。<br>
+5、具备视频剪辑与特效制作能力。<br>
+6、熟练操作单反相机，具备优秀的摄影技能。
+</p>
+<br>
+                 <a href="https://www.zcool.com.cn/u/13578922">
+					 <p class="about-description"> 站酷：小徐biubiu </p>
+				 </a>
+            </div>
+        </div>
+    </div>
+    <!-- 工作经历 -->
+    <div class="work-experience">
+        <h3>工作经历</h3>
+        <div class="work-card">
+            <h4>2024.05 - 2024.11 | 成都奇林智媒科技有限公司 | 美术指导</h4>
+            <p>公司是一家乙方广告公司，我主要参与了<999皮炎平小红书9月-露营季>活动线下物料的设计，京东<答案之书>会场设计，以及淘宝<源产地直播溯源>的部分设计。</p>
+        </div>
+        <div class="work-card">
+            <h4>2023.06 - 2024.03 | 深圳博拉科技有限公司 | 资深设计师 </h4>
+			
+            <p>公司是一家4A广告公司，我主要负责中海领潮，iqoo/vivo 社区，康佳易平方等三个项目：<br>
+1、中海领潮主要有如下工作，公众号推文的排版设计，招标公告的设计，节假日海报设计，年中年末总结设计，以及双月刊画册设计；<br>
+2、iqoo/vivo 社区主要负责，原创活动海报设计以及一些其他日常设计，在工作的一年里，参与设计了社区 app 上线宣传部分内容，并设计了纪念钥匙；<br>
+3、康佳易平方主要是，负责小红书配图，直播背景和产品图，参与 superkimi 第九届粉丝节场景布展设计。</p>
+        </div>
+        <div class="work-card">
+            <h4>2021.04-2022.12 | 深圳市爱尔创科技有限公司 | 电商设计师</h4>
+            <p>公司是一家从事齿科材料生产销售的上市公司（股票代码：300285），我主要负责电商部门的设计工作：<br>
+1、日常与活动店铺的装修与维护；<br>
+2、产品上新 主图 详情 sku 的制作与修改；<br>
+3、日常推广图、产品主图的设计与修改；<br>
+4、配合推广剪辑拍摄视频以及直播间的搭建。</p>
+        </div>
+        <div class="work-card">
+            <h4>2018.06-2021.04 | 深圳市创韵达电子科技有限公司 | 平面设计</h4>
+            <p>公司一家从事蓝牙音箱生产销售的公司，我主要负责如下：<br>
+1、产品上新推广图的制作；<br>
+2、包装等物料的设计与修改，新品包装盒和客户OEM订单的修改；<br>
+3、展会的装修布置跟进，主要有一年两次香港展。</p>
+        </div>
+        <div class="work-card">
+            <h4>2016.06-2018.05 | 深圳市拓步电子科技有限公司 | 市场设计</h4>
+            <p>公司是一家从事电子产品生产的企业（品牌为索立信，sosoon），我主要负责如下:<br>
+1、负责部门产品画册设计、包装设计、海报等平面类设计工作；<br>
+2、负责对产品物料方面的设计（贴纸，说明书，保修卡，合格证，彩盒，丝印，马甲，帐篷等）；<br>
+3、负责对产品开机界面，待机壁纸等的设计与优化；<br>
+4、负责对外宣传方面设计，产品卖点详情页，单页等；<br>
+5、配合销售部完成有关的客户定制所需的设计。</p>
+        </div>
+    </div>
+	<div class="pdf-download">
+	        <a href="pdf/徐旭作品集.pdf" download>下载作品详情 PDF</a>
+			<a href="pdf/徐旭作品集.jpg" download>下载作品详情 jpg</a>
+	</div>
+    <!-- 底部版权说明 -->
+    <div class="footer">
+        <p>&copy; 2025 个人作品集. 保留所有权利.</p>
+    </div>
+</body>
+
+</html>
+    

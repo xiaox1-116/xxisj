@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品1详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 导航栏样式 */
+       .nav {
+            background-color: rgba(1, 2, 23);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+       .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+       .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+       .nav-menu li {
+            margin: 0 15px;
+        }
+
+       .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .nav-menu li a:hover {
+            color: #b8b8b8;
+        }
+
+        /* 作品详情页面样式 */
+       .work-detail {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+       .work-detail-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       .work-detail-image {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+       .work-detail-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+			padding-top: 3pt;
+			padding-bottom: 20pt;
+        }
+
+       .work-detail-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+			padding-bottom: 20pt;
+        }
+		.work-detail-description-1 {
+		     font-size: 18px;
+			 font-weight: bold;
+		     color: #111;
+		     line-height: 1.6;
+		 }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">个人作品集</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="works.html">作品</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 作品详情 -->
+    <div class="work-detail">
+        <h2 class="work-detail-title">领潮双月刊&年刊</h2>
+        
+        <p class="work-detail-description">2024年，领潮平均每2月做一次双月刊，用于内部印刷传阅，作为设计师制作月刊的过程包括排版设计和印刷等环节。首先确定主题和风格，然后收集素材并进行整理和编辑，接着进行排版设计和图文搭配，最后进行印刷和装订。
+
+        </p>
+		
+		
+		<div class="work-detail-image">
+			<p class="work-detail-description-1">示意</p>
+			<a href="https://book.yunzhan365.com/ajcej/nuqb/mobile/index.html">
+		            <img src="img/lcyk.jpg" alt="作品1大图"></a>
+			<a href="https://book.yunzhan365.com/ajcej/oshz/mobile/index.html">
+                    <img src="img/lcnk.jpg" alt="作品1大图"></a>
+			
+		        </div>
+    </div>
+</body>
+
+</html>
+    

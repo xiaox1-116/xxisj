@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 导航栏样式 */
+       .nav {
+            background-color: rgba(1, 2, 23);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+       .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+       .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+       .nav-menu li {
+            margin: 0 15px;
+        }
+
+       .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .nav-menu li a:hover {
+            color: #b8b8b8;
+        }
+
+        /* 联系我页面样式 */
+       .contact {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+       .contact-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       .contact-description {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+       .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+       .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+       .contact-item i {
+            font-size: 24px;
+            color: rgba(1, 2, 23, 0.9);
+        }
+
+       .contact-qr {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+       .contact-qr img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+		.zt {
+		     padding-top: 5pt;
+			 
+		 }
+
+        /* 底部版权说明样式 */
+       .footer {
+            color: #808080;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">个人作品集</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="works.html">作品</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 联系我内容 -->
+    <div class="contact">
+        <h2 class="contact-title">联系我</h2>
+        <p class="contact-description">如果你对我的作品感兴趣或者有任何合作意向，欢迎通过以下方式与我联系。</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>邮箱：1138905534@qq.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>电话：13632778195</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-weixin"></i>
+                <span>微信：xiaoxu96vv</span>
+            </div>
+        </div>
+        <div class="contact-qr">
+            <img src="img/003.png" alt="二维码" onerror="this.src='https://picsum.photos/200/200?random=1'; this.onerror=null;">
+            <p class="zt">扫描二维码添加我</p>
+        </div>
+    </div>
+    <!-- 底部版权说明 -->
+    <div class="footer">
+        <p>&copy; 2025 个人作品集. 保留所有权利.</p>
+    </div>
+</body>
+
+</html>
+    

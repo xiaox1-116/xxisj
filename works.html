@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 导航栏样式 */
+       .nav {
+            background-color: rgba(1, 2, 23);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+			
+        }
+
+       .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+       .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+       .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+       .nav-menu li {
+            margin: 0 15px;
+        }
+
+       .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .nav-menu li a:hover {
+            color: #b8b8b8;
+        }
+
+        /* 作品页面样式 */
+       .works {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0pt auto;
+        }
+
+       .works-section {
+            margin-bottom: 60px;
+        }
+
+       .works-section h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       .works-items {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 40px;
+        }
+
+       .works-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+       .works-item:hover {
+            transform: translateY(-10px);
+        }
+
+       .works-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+       .works-item-content {
+            padding: 20px;
+        }
+
+       .works-item-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+       .works-item-text {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* 底部版权说明样式 */
+       .footer {
+            color: #808080;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+		.about-description {
+		     font-size: 18px;
+		     color: #222;
+		     line-height: 1.6;
+		     text-align: center;
+		 }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">个人作品集</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="works.html">作品</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 作品内容 -->
+    <div class="works">
+        <!-- 视觉设计 -->
+        <div class="works-section">
+            <h2 id="section1">视觉设计</h2>
+			
+            <div class="works-items">
+                <div class="works-item">
+					<a href="work_detail_1.html">
+                    <img src="img/iqoo-kv (7).jpg" alt="视觉设计作品 1">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">iQOO 主KV</h3>
+                        <p class="works-item-text">包含iqoo 活动的一些主KV设计</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_2.html">
+                    <img src="img/mj-sy.png" alt="视觉设计作品 2">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">Midjourney的商用</h3>
+                        <p class="works-item-text">此MJ在商用上的尝试与后期。</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_3.html">
+                    <img src="img/sd-lx.png" alt="视觉设计作品 3">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">Stable Diffusion练习</h3>
+                        <p class="works-item-text">SD从关键词，参考，大模型lora采样控制等</p>
+                    </div>
+					</a>
+                </div>
+            </div>
+        </div>
+        <!-- AIGC 设计 -->
+        <div class="works-section">
+            <h2 id="section2">三维设计</h2>
+            <div class="works-items">
+                <div class="works-item">
+					<a href="work_detail_4.html">
+                    <img src="img/005.jpg" alt="AIGC 设计作品 1">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">iQOO 社区改版</h3>
+                        <p class="works-item-text">iqoo 2023社区改版，接到需求后......</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_5.html">
+                    <img src="img/wt.jpg" alt="AIGC 设计作品 2">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">领潮供应商大会招标</h3>
+                        <p class="works-item-text">2023 领潮首届合作伙伴大会举办......</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_6.html">
+                    <img src="img/ya-1.jpg" alt="AIGC 设计作品 3">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">iQOO 四周年纪念钥匙</h3>
+                        <p class="works-item-text">2023 iqoo社区APP上线，同步......</p>
+                    </div>
+					</a>
+                </div>
+            </div>
+        </div>
+        <!-- 电商设计 -->
+        <div class="works-section">
+            <h2 id="section3">电商设计</h2>
+            <div class="works-items">
+                <div class="works-item">
+					<a href="work_detail_7.html">
+                    <img src="img/5.jpg" alt="电商设计作品 1">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">日常主图设计</h3>
+                        <p class="works-item-text">主要归纳一些C4d建模渲染的部分产品......</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_8.html">
+                    <img src="img/6.jpg" alt="电商设计作品 2">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">日常详情页</h3>
+                        <p class="works-item-text">商品详情页设计，突出商品特点和优势。</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_9.html">
+                    <img src="img/ds-dpzx.png"电商设计作品 3">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">店铺装修</h3>
+                        <p class="works-item-text">促销活动页面设计，营造节日氛围促进销售。</p>
+                    </div>
+					</a>
+                </div>
+            </div>
+        </div>
+        <!-- 物料设计 -->
+        <div class="works-section">
+            <h2>物料设计</h2>
+            <div class="works-items">
+                <div class="works-item">
+					<a href="work_detail_11.html">
+                    <img src="img/A4-1.jpg" alt="物料设计作品 1">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">领潮内外部权益表</h3>
+                        <p class="works-item-text">2024年初，领潮推出内外部......</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_10.html">
+                    <img src="img/lcyk-1.jpg" alt="物料设计作品 2">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">领潮月刊</h3>
+                        <p class="works-item-text">领潮的双月刊，以及年刊......</p>
+                    </div>
+					</a>
+                </div>
+                <div class="works-item">
+					<a href="work_detail_12.html">
+                    <img src="img/999.jpg" alt="物料设计作品 3">
+                    <div class="works-item-content">
+                        <h3 class="works-item-title">999皮炎平小红书线下活动</h3>
+                        <p class="works-item-text">2024年，小红书联合999皮炎平在广州......</p>
+                    </div>
+					</a>
+                </div>
+            </div>
+        </div>
+    </div><p class="about-description">如果你想看我4年前的作品，可以访问我的站酷</p>
+	<a href="https://www.zcool.com.cn/u/13578922">
+						 <p class="about-description">站酷号：小徐biubiu(点击访问) </p>
+	</a>
+    <!-- 底部版权说明 -->
+    <div class="footer">
+        <p>&copy; 2025 个人作品集. 保留所有权利.</p>
+    </div>
+</body>
+
+</html>
+    
