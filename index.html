@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
         /* 导航栏样式 */
-       .nav {
+        .nav {
             background-color: rgba(1, 2, 23);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -20,7 +20,7 @@
             z-index: 1000;
         }
 
-       .nav-container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -29,84 +29,83 @@
             padding: 0 20px;
         }
 
-       .nav-logo {
+        .nav-logo {
             color: white;
             font-size: 24px;
             font-weight: bold;
             text-decoration: none;
         }
 
-       .nav-menu {
+        .nav-menu {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
         }
 
-       .nav-menu li {
+        .nav-menu li {
             margin: 0 15px;
         }
 
-       .nav-menu li a {
+        .nav-menu li a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-       .nav-menu li a:hover {
+        .nav-menu li a:hover {
             color: #b8b8b8;
         }
 
         /* 轮播图样式 */
         .slider {
-                   width: 100%;
-                   /* 高度使用视口高度的百分比，根据实际情况调整 */
-                   height: 75vh;
-                   position: relative;
-                   overflow: auto;
-				   
-               }
-       
-              .slider img {
-                   width: 100%;
-                   height: 100%;
-                   object-fit: cover;
-                   position: absolute;
-                   opacity: 0;
-                   transition: opacity 1s ease-in-out;
-               }
-       
-              .slider img.active {
-                   opacity: 1;
-               }
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 2070/912; /* 保持宽高比 */
+            margin: 0 auto;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slider img.active {
+            opacity: 1;
+        }
 
         /* 个人作品介绍样式 */
-       .portfolio {
-            padding: 100px 20px;
+        .portfolio {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            padding: 100px 20px;
         }
 
-       .portfolio-title {
+        .portfolio-title {
             font-size: 48px;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-       .portfolio-description {
+        .portfolio-description {
             font-size: 20px;
             color: #666;
             margin-bottom: 60px;
         }
 
-       .portfolio-items {
+        .portfolio-items {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
-       .portfolio-item {
+        .portfolio-item {
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -114,37 +113,38 @@
             transition: transform 0.3s ease;
         }
 
-       .portfolio-item:hover {
+        .portfolio-item:hover {
             transform: translateY(-10px);
         }
 
-       .portfolio-item img {
+        .portfolio-item img {
             width: 100%;
             height: auto;
             object-fit: cover;
         }
 
-       .portfolio-item-content {
+        .portfolio-item-content {
             padding: 20px;
         }
 
-       .portfolio-item-title {
+        .portfolio-item-title {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-       .portfolio-item-text {
+        .portfolio-item-text {
             font-size: 16px;
             color: #666;
         }
-		/* 底部版权说明样式 */
-		.footer {
-		     color: #808080;
-		     text-align: center;
-		     padding: 20px 0;
-		     margin-top: 40px;
-		 }
+
+        /* 底部版权说明样式 */
+        .footer {
+            color: #808080;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
     </style>
 </head>
 
@@ -218,12 +218,10 @@
 
         setInterval(showSlide, 3000);
     </script>
-	
-	<!-- 底部版权说明 -->
-	<div class="footer">
-	    <p>&copy; 2025 个人作品集. 保留所有权利. 鄂ICP备2025108886号</p> 
-	</div>
+    <!-- 底部版权说明 -->
+    <div class="footer">
+        <p>&copy; 2025 个人作品集. 保留所有权利.</p>
+    </div>
 </body>
 
 </html>
-    
