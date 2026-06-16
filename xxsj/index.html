@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端适配，禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>票证查验</title>
+    <style>
+        /* 全局初始化样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, "PingFang SC", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            background: #ffffff;
+            padding: 0 16px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .back-btn {
+            color: #4096ff;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .header-title {
+            font-size: 20px;
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+            padding-right: 40px;
+        }
+
+        /* 滑动外层容器 */
+        .slide-wrap {
+            width: 100%;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+        }
+        /* 滑动容器，容纳2页 */
+        .slide-container {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 0.3s ease-out;
+        }
+        /* 单页内容容器 */
+        .slide-item {
+            width: 100%;
+            height: 100%;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 绿色成功对勾图标 */
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            border: 4px solid #36c761;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .success-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: #36c761;
+        }
+        .success-text {
+            font-size: 28px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+
+        /* 证件卡片样式 */
+        .cert-card {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .cert-card img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 分页文字 1/2 */
+        .page-indicator {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #999999;
+        }
+
+        /* 全屏放大弹窗 */
+        .preview-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .preview-modal img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <span class="back-btn">&lt; 返回</span>
+        <div class="header-title">票证查验</div>
+    </div>
+
+    <!-- 左右滑动区域 -->
+    <div class="slide-wrap">
+        <div class="slide-container" id="slideBox">
+            <!-- 第1页 1/2 -->
+            <div class="slide-item">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <div class="success-text">恭喜您，校验成功</div>
+                <div class="cert-card" data-preview="img1">
+                    <!-- 相对路径，和目录对应 -->
+                    <img src="./img/个税1.jpg" alt="个税记录第1页">
+                </div>
+                <div class="page-indicator">1 / 2</div>
+            </div>
+
+            <!-- 第2页 2/2 -->
+            <div class="slide-item">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <div class="success-text">恭喜您，校验成功</div>
+                <div class="cert-card" data-preview="img2">
+                    <img src="./img/个税2.jpg" alt="个税记录第2页">
+                </div>
+                <div class="page-indicator">2 / 2</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全屏图片预览弹窗 -->
+    <div class="preview-modal" id="previewModal">
+        <img id="previewImg" src="" alt="放大预览图">
+    </div>
+
+    <script>
+        // 1. 触摸左右滑动逻辑
+        const slideBox = document.getElementById('slideBox');
+        let startX = 0;
+        let moveX = 0;
+        let currentPage = 0; // 0=第一页，1=第二页
+        const pageWidth = window.innerWidth;
+
+        // 手指按下
+        slideBox.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        // 手指滑动
+        slideBox.addEventListener('touchmove', (e) => {
+            moveX = e.touches[0].clientX - startX;
+            let offset = -currentPage * pageWidth + moveX;
+            // 边界限制，不滑出空白
+            if(offset > 0) offset = 0;
+            if(offset < -pageWidth) offset = -pageWidth;
+            slideBox.style.transform = `translateX(${offset}px)`;
+            slideBox.style.transition = 'none';
+        });
+        // 手指松开，自动切换页面
+        slideBox.addEventListener('touchend', () => {
+            slideBox.style.transition = 'transform 0.3s ease-out';
+            // 滑动超过80px才切换
+            if(moveX < -80 && currentPage === 0) {
+                currentPage = 1;
+            } else if(moveX > 80 && currentPage === 1) {
+                currentPage = 0;
+            }
+            slideBox.style.transform = `translateX(${-currentPage * pageWidth}px)`;
+            moveX = 0;
+        });
+
+        // 2. 点击卡片全屏放大逻辑
+        const modal = document.getElementById('previewModal');
+        const previewImg = document.getElementById('previewImg');
+        const certCards = document.querySelectorAll('.cert-card');
+        // 图片路径映射（统一相对路径）
+        const imgSrcMap = {
+            img1: './img/个税1.jpg',
+            img2: './img/个税2.jpg'
+        };
+
+        // 绑定点击事件
+        certCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.dataset.preview;
+                previewImg.src = imgSrcMap[key];
+                modal.style.display = 'flex';
+            });
+        });
+        // 点击遮罩任意位置关闭弹窗
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
